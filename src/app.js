@@ -1,12 +1,12 @@
 const express = require("express")
 const productsRoutes = require("./routes/products.routes")
+const errorHandler = require('./middleware/index')
 
 const app = express()
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.status(200).json("a rota tá ok")
-})
-app.use('/mockingproducts', productsRoutes)
+app.use('/', productsRoutes)
+
+app.use(errorHandler)
 
 module.exports = app

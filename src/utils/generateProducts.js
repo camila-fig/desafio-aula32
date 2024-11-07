@@ -1,9 +1,8 @@
 const { faker } = require("@faker-js/faker")
+const fs = require("fs").promises
 
-const generateProducts = (number) => {
-
+const generateProducts = (number) => {    
     const products = []
-
     for (let index = 0; index < number; index++) {
         const product = {
             _id: faker.string.alphanumeric(10) ,
@@ -13,9 +12,11 @@ const generateProducts = (number) => {
             thumbnail: faker.image.avatar(),
             code: faker.finance.pin(4),
             stock: faker.finance.pin(2),
-            status: faker.datatype.boolean(0.8),
+            status: faker.datatype.boolean(0.95),
         }
         products.push(product)
+        const dataToSave = JSON.stringify(products)
+        fs.writeFile("./data.json", dataToSave)
     }
     return products
 }

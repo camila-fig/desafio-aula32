@@ -6,9 +6,9 @@ const generateUserErrorInfo = (product) => {
     * description  : precisa ser uma string, informado ${product.description}
     * price        : precisa ser um número maior que zero, informado ${product.price}
     * thumbnail    : precisa ser uma string, informado ${product.thumbnail}
-    * code         : precisa ser uma string, informado ${product.code}
-    * stock        : precisa ser um número maior e diferente de zero, informado ${product.stock}
+    * code         : precisa ser um número maior que zero, informado ${product.code}
+    * stock        : precisa ser um número maior que zero, informado ${product.stock}
     * status       : precisa ser um boleano, informado ${product.status}`
 }
 
-module.exports = { generateUserErrorInfo }
+module.exports = generateUserErrorInfo

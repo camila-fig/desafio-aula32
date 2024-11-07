@@ -10,8 +10,8 @@ const generateProducts = (number) => {
             description: faker.food.description(),
             price: `R$${faker.finance.pin(2)},00`,
             thumbnail: faker.image.avatar(),
-            code: faker.finance.pin(4),
-            stock: faker.finance.pin(2),
+            code: Number(faker.finance.pin(4)),
+            stock: Number(faker.finance.pin(2)),
             status: faker.datatype.boolean(0.95),
         }
         products.push(product)

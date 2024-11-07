@@ -18,6 +18,7 @@ const generateProducts = (number) => {
         const dataToSave = JSON.stringify(products)
         fs.writeFile("./data.json", dataToSave)
     }
+    
     return products
 }
 
